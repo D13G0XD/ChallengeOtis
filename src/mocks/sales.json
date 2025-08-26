@@ -1,0 +1,67 @@
+[
+  {
+    "id": "SALE-001",
+    "contratoId": "LATAM-0001",
+    "cliente": "Edifício Aurora",
+    "vendedor": "Ana Paula Silva",
+    "dataVenda": "2025-06-01",
+    "valor": 250000,
+    "prazoPrometido": "2025-09-01",
+    "tipo": "Elevador Residencial",
+    "andares": 12,
+    "paradas": 13,
+    "status": "Ativo"
+  },
+  {
+    "id": "SALE-002",
+    "contratoId": "LATAM-0002",
+    "cliente": "Torre Empresarial Santos",
+    "vendedor": "Roberto Oliveira",
+    "dataVenda": "2025-07-01",
+    "valor": 180000,
+    "prazoPrometido": "2025-10-15",
+    "tipo": "Elevador Comercial",
+    "andares": 8,
+    "paradas": 9,
+    "status": "Ativo"
+  },
+  {
+    "id": "SALE-003",
+    "contratoId": "LATAM-0003",
+    "cliente": "Centro Comercial Buenos Aires",
+    "vendedor": "Carlos Rodriguez",
+    "dataVenda": "2025-05-01",
+    "valor": 320000,
+    "prazoPrometido": "2025-08-01",
+    "tipo": "Elevador Comercial",
+    "andares": 15,
+    "paradas": 16,
+    "status": "Concluído"
+  },
+  {
+    "id": "SALE-004",
+    "contratoId": "LATAM-0004",
+    "cliente": "Hospital Central Bogotá",
+    "vendedor": "Patricia Gonzalez",
+    "dataVenda": "2025-08-01",
+    "valor": 420000,
+    "prazoPrometido": "2025-11-30",
+    "tipo": "Elevador Hospitalar",
+    "andares": 10,
+    "paradas": 11,
+    "status": "Ativo"
+  },
+  {
+    "id": "SALE-005",
+    "contratoId": "LATAM-0005",
+    "cliente": "Shopping Lima Norte",
+    "vendedor": "Miguel Torres",
+    "dataVenda": "2025-06-15",
+    "valor": 290000,
+    "prazoPrometido": "2025-09-20",
+    "tipo": "Elevador Comercial",
+    "andares": 6,
+    "paradas": 7,
+    "status": "Ativo"
+  }
+]

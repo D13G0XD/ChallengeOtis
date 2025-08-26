@@ -1,0 +1,32 @@
+[
+  {
+    "id": "FB-001",
+    "instalacaoId": "LATAM-0001",
+    "cliente": "Edifício Aurora",
+    "nota": 4,
+    "comentario": "Acompanhamento claro, equipe muito profissional",
+    "categoria": "Atendimento",
+    "data": "2025-08-20",
+    "respondido": false
+  },
+  {
+    "id": "FB-002",
+    "instalacaoId": "LATAM-0003",
+    "cliente": "Centro Comercial Buenos Aires",
+    "nota": 5,
+    "comentario": "Excelente trabalho da equipe, prazo cumprido à risca",
+    "categoria": "Prazo",
+    "data": "2025-08-02",
+    "respondido": true
+  },
+  {
+    "id": "FB-003",
+    "instalacaoId": "LATAM-0001",
+    "cliente": "Edifício Aurora",
+    "nota": 3,
+    "comentario": "Alguns ruídos durante a instalação incomodaram os moradores",
+    "categoria": "Qualidade",
+    "data": "2025-08-15",
+    "respondido": false
+  }
+]

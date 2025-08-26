@@ -1,0 +1,42 @@
+[
+  {
+    "instalacaoId": "LATAM-0001",
+    "status": "Em Produção",
+    "progressoFabricacao": 85,
+    "dataInicioFabricacao": "2025-07-01",
+    "dataEstimadaEnvio": "2025-08-28",
+    "componentes": [
+      {"nome": "Cabina", "status": "Concluído", "progresso": 100},
+      {"nome": "Contrapeso", "status": "Concluído", "progresso": 100},
+      {"nome": "Máquina de Tração", "status": "Em Produção", "progresso": 80},
+      {"nome": "Painel de Controle", "status": "Aguardando", "progresso": 0}
+    ]
+  },
+  {
+    "instalacaoId": "LATAM-0002",
+    "status": "Iniciado",
+    "progressoFabricacao": 25,
+    "dataInicioFabricacao": "2025-08-01",
+    "dataEstimadaEnvio": "2025-09-15",
+    "componentes": [
+      {"nome": "Cabina", "status": "Em Produção", "progresso": 30},
+      {"nome": "Contrapeso", "status": "Aguardando", "progresso": 0},
+      {"nome": "Máquina de Tração", "status": "Aguardando", "progresso": 0},
+      {"nome": "Painel de Controle", "status": "Aguardando", "progresso": 0}
+    ]
+  },
+  {
+    "instalacaoId": "LATAM-0003",
+    "status": "Enviado",
+    "progressoFabricacao": 100,
+    "dataInicioFabricacao": "2025-06-01",
+    "dataEstimadaEnvio": "2025-06-25",
+    "dataEnvio": "2025-06-25",
+    "componentes": [
+      {"nome": "Cabina", "status": "Enviado", "progresso": 100},
+      {"nome": "Contrapeso", "status": "Enviado", "progresso": 100},
+      {"nome": "Máquina de Tração", "status": "Enviado", "progresso": 100},
+      {"nome": "Painel de Controle", "status": "Enviado", "progresso": 100}
+    ]
+  }
+]

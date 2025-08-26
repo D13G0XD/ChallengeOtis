@@ -1,0 +1,57 @@
+[
+  {
+    "instalacaoId": "LATAM-0001",
+    "data": "2025-08-25",
+    "atividades": [
+      {
+        "id": "act-001",
+        "tipo": "Instalação de Guias",
+        "status": "Concluído",
+        "responsavel": "João Silva",
+        "horaInicio": "08:00",
+        "horaFim": "12:00",
+        "observacoes": "Instalação das guias principais realizada conforme especificação",
+        "fotos": [
+          "/uploads/latam-0001-guias-1.jpg",
+          "/uploads/latam-0001-guias-2.jpg"
+        ]
+      },
+      {
+        "id": "act-002",
+        "tipo": "Montagem da Cabina",
+        "status": "Em Andamento",
+        "responsavel": "Maria Santos",
+        "horaInicio": "13:00",
+        "horaFim": null,
+        "observacoes": "Iniciada montagem da estrutura da cabina",
+        "fotos": []
+      }
+    ],
+    "checklist": [
+      {"item": "Verificar alinhamento das guias", "concluido": true},
+      {"item": "Testar fixações", "concluido": true},
+      {"item": "Documentar medições", "concluido": false}
+    ]
+  },
+  {
+    "instalacaoId": "LATAM-0001",
+    "data": "2025-08-24",
+    "atividades": [
+      {
+        "id": "act-003",
+        "tipo": "Preparação do Poço",
+        "status": "Concluído",
+        "responsavel": "Carlos Mendes",
+        "horaInicio": "07:30",
+        "horaFim": "16:00",
+        "observacoes": "Limpeza e preparação do poço do elevador",
+        "fotos": ["/uploads/latam-0001-poco-1.jpg"]
+      }
+    ],
+    "checklist": [
+      {"item": "Limpeza do poço", "concluido": true},
+      {"item": "Verificar estrutura", "concluido": true},
+      {"item": "Medição das dimensões", "concluido": true}
+    ]
+  }
+]

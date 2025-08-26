@@ -1,0 +1,98 @@
+[
+  {
+    "id": "LATAM-0001",
+    "cliente": "Edifício Aurora",
+    "pais": "BR",
+    "cidade": "São Paulo",
+    "status": "Instalação",
+    "etapas": [
+      {"nome":"Vendido","data":"2025-06-01"},
+      {"nome":"Engenharia","data":"2025-06-10"},
+      {"nome":"Fabricação","data":"2025-07-01"},
+      {"nome":"Em Transporte","data":"2025-07-20"},
+      {"nome":"Instalação","data":"2025-08-05"}
+    ],
+    "prazoPrometido":"2025-09-01",
+    "custoPlanejado": 250000,
+    "custoReal": 262500,
+    "retrabalho": 1,
+    "incidentes": [{"tipo":"Qualidade","sev":"Média","descricao":"Ajuste de porta"}],
+    "feedbacks":[{"nota":4,"comentario":"Acompanhamento claro"}]
+  },
+  {
+    "id": "LATAM-0002",
+    "cliente": "Torre Empresarial Santos",
+    "pais": "BR",
+    "cidade": "Santos",
+    "status": "Fabricação",
+    "etapas": [
+      {"nome":"Vendido","data":"2025-07-01"},
+      {"nome":"Engenharia","data":"2025-07-15"},
+      {"nome":"Fabricação","data":"2025-08-01"}
+    ],
+    "prazoPrometido":"2025-10-15",
+    "custoPlanejado": 180000,
+    "custoReal": 185000,
+    "retrabalho": 0,
+    "incidentes": [],
+    "feedbacks":[]
+  },
+  {
+    "id": "LATAM-0003",
+    "cliente": "Centro Comercial Buenos Aires",
+    "pais": "AR",
+    "cidade": "Buenos Aires",
+    "status": "Handover",
+    "etapas": [
+      {"nome":"Vendido","data":"2025-05-01"},
+      {"nome":"Engenharia","data":"2025-05-15"},
+      {"nome":"Fabricação","data":"2025-06-01"},
+      {"nome":"Em Transporte","data":"2025-06-25"},
+      {"nome":"Instalação","data":"2025-07-10"},
+      {"nome":"Comissionamento","data":"2025-07-25"},
+      {"nome":"Handover","data":"2025-08-01"}
+    ],
+    "prazoPrometido":"2025-08-01",
+    "custoPlanejado": 320000,
+    "custoReal": 315000,
+    "retrabalho": 0,
+    "incidentes": [],
+    "feedbacks":[{"nota":5,"comentario":"Excelente trabalho da equipe"}]
+  },
+  {
+    "id": "LATAM-0004",
+    "cliente": "Hospital Central Bogotá",
+    "pais": "CO",
+    "cidade": "Bogotá",
+    "status": "Engenharia",
+    "etapas": [
+      {"nome":"Vendido","data":"2025-08-01"},
+      {"nome":"Engenharia","data":"2025-08-15"}
+    ],
+    "prazoPrometido":"2025-11-30",
+    "custoPlanejado": 420000,
+    "custoReal": 420000,
+    "retrabalho": 0,
+    "incidentes": [],
+    "feedbacks":[]
+  },
+  {
+    "id": "LATAM-0005",
+    "cliente": "Shopping Lima Norte",
+    "pais": "PE",
+    "cidade": "Lima",
+    "status": "Em Transporte",
+    "etapas": [
+      {"nome":"Vendido","data":"2025-06-15"},
+      {"nome":"Engenharia","data":"2025-06-30"},
+      {"nome":"Fabricação","data":"2025-07-15"},
+      {"nome":"Em Transporte","data":"2025-08-10"}
+    ],
+    "prazoPrometido":"2025-09-20",
+    "custoPlanejado": 290000,
+    "custoReal": 295000,
+    "retrabalho": 0,
+    "incidentes": [{"tipo":"Logística","sev":"Baixa","descricao":"Atraso na entrega de peças"}],
+    "feedbacks":[]
+  }
+]
