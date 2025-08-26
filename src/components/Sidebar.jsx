@@ -37,7 +37,7 @@ const Sidebar = ({ isOpen, onClose }) => {
 
       {/* Sidebar */}
       <div className={`
-        fixed top-16 left-0 z-40 w-64 h-full bg-white border-r border-gray-200 
+        fixed top-12 left-0 z-40 w-64 h-full bg-white border-r border-gray-200 
         transform transition-transform duration-300 ease-in-out lg:translate-x-0
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
@@ -53,7 +53,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         </div>
 
         {/* Navegação */}
-        <nav className="flex-1 px-4 pb-4 space-y-1">
+        <nav className="flex-1 mt-8 px-4 pb-4 space-y-1">
           {navigation.map((item) => (
             <NavLink
               key={item.name}

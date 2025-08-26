@@ -106,7 +106,7 @@ const Planejamento = () => {
         <h1 className="text-2xl font-bold text-gray-900">
           {t('planejamento')}
         </h1>
-        <p className="text-gray-600 mt-1">
+        <p className="text-gray-600 mt-8">
           Cronograma e timeline dos projetos
         </p>
       </div>

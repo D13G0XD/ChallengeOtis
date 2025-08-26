@@ -87,7 +87,7 @@ const Fabricacao = () => {
         <h1 className="text-2xl font-bold text-gray-900">
           {t('fabricacao')}
         </h1>
-        <p className="text-gray-600 mt-1">
+        <p className="text-gray-600 mt-8">
           Status de fabricação e envio dos componentes
         </p>
       </div>

@@ -108,7 +108,7 @@ const Qualidade = () => {
         <h1 className="text-2xl font-bold text-gray-900">
           {t('qualidade')}
         </h1>
-        <p className="text-gray-600 mt-1">
+        <p className="text-gray-600 mt-8">
           Indicadores de qualidade e satisfação
         </p>
       </div>

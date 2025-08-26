@@ -92,7 +92,7 @@ const Dashboard = () => {
         <h1 className="text-2xl font-bold text-gray-900">
           {t('dashboard')}
         </h1>
-        <p className="text-gray-600 mt-1">
+        <p className="text-gray-600 mt-8">
           Visão geral das operações OTIS LATAM
         </p>
       </div>

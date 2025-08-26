@@ -103,7 +103,7 @@ const Instalacao = () => {
         <h1 className="text-2xl font-bold text-gray-900">
           {t('instalacao')}
         </h1>
-        <p className="text-gray-600 mt-1">
+        <p className="text-gray-600 mt-8">
           Acompanhamento de instalações em campo
         </p>
       </div>
