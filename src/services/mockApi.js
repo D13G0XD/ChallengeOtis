@@ -170,6 +170,71 @@ export const mockApi = {
     return sales;
   },
 
+  async getSaleById(id) {
+    await delay();
+    initializeStorage();
+    
+    const sales = getStorageData(STORAGE_KEYS.sales);
+    return sales.find(s => s.id === id);
+  },
+
+  async createSale(saleData) {
+    await delay();
+    initializeStorage();
+    
+    const sales = getStorageData(STORAGE_KEYS.sales);
+    
+    // Gerar novo ID e contratoId
+    const newId = `SALE-${String(sales.length + 1).padStart(3, '0')}`;
+    const newContratoId = `LATAM-${String(sales.length + 1).padStart(4, '0')}`;
+    
+    const newSale = {
+      id: newId,
+      contratoId: newContratoId,
+      ...saleData,
+      status: saleData.status || 'Ativo'
+    };
+    
+    sales.push(newSale);
+    setStorageData(STORAGE_KEYS.sales, sales);
+    
+    return newSale;
+  },
+
+  async updateSale(id, saleData) {
+    await delay();
+    initializeStorage();
+    
+    const sales = getStorageData(STORAGE_KEYS.sales);
+    const index = sales.findIndex(s => s.id === id);
+    
+    if (index === -1) {
+      throw new Error('Contrato não encontrado');
+    }
+    
+    sales[index] = { ...sales[index], ...saleData };
+    setStorageData(STORAGE_KEYS.sales, sales);
+    
+    return sales[index];
+  },
+
+  async deleteSale(id) {
+    await delay();
+    initializeStorage();
+    
+    const sales = getStorageData(STORAGE_KEYS.sales);
+    const index = sales.findIndex(s => s.id === id);
+    
+    if (index === -1) {
+      throw new Error('Contrato não encontrado');
+    }
+    
+    const deletedSale = sales.splice(index, 1)[0];
+    setStorageData(STORAGE_KEYS.sales, sales);
+    
+    return deletedSale;
+  },
+
   // Feedback
   async getFeedback(instalacaoId = null) {
     await delay();
