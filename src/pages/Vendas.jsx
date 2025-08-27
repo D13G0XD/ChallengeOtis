@@ -179,7 +179,7 @@ const Vendas = () => {
   return (
     <div className="space-y-6">
       {/* Cabeçalho */}
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mt-16">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">
             {t('vendas')}
