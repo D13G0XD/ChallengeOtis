@@ -39,7 +39,6 @@ const Header = ({ onMenuClick }) => {
               <option value="pt-BR">🇧🇷 PT</option>
               <option value="es-419">🇪🇸 ES</option>
             </select>
-            <Globe className="absolute right-1 top-1 h-4 w-4 text-gray-400 pointer-events-none" />
           </div>
 
           {/* Notificações */}
