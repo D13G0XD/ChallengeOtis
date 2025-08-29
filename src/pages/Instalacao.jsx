@@ -97,10 +97,10 @@ const Instalacao = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 ml-8">
       {/* Cabeçalho */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">
+        <h1 className="text-2xl font-bold text-gray-900 mt-16">
           {t('instalacao')}
         </h1>
         <p className="text-gray-600 mt-8">
@@ -120,7 +120,7 @@ const Instalacao = () => {
                 placeholder={t('buscar') + ' por cliente, ID ou cidade...'}
                 value={filters.busca}
                 onChange={(e) => handleFilterChange('busca', e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-otis-blue focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-otis-blue focus:border-transparent"
               />
             </div>
           </div>
@@ -130,7 +130,7 @@ const Instalacao = () => {
             <select
               value={filters.pais}
               onChange={(e) => handleFilterChange('pais', e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-otis-blue focus:border-transparent"
+              className="px-4 py-2 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-otis-blue focus:border-transparent"
             >
               <option value="">Todos os países</option>
               {countries.map(country => (
@@ -144,7 +144,7 @@ const Instalacao = () => {
             <select
               value={filters.status}
               onChange={(e) => handleFilterChange('status', e.target.value)}
-              className="px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-otis-blue focus:border-transparent"
+              className="px-4 py-2 border bg-white border-gray-300 rounded-lg focus:ring-2 focus:ring-otis-blue focus:border-transparent"
             >
               <option value="">Todos os status</option>
               {statusOptions.map(status => (

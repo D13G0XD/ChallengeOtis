@@ -56,7 +56,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         </div>
 
         {/* Navegação */}
-        <nav className="flex-1 mt-6 px-4 pb-4 space-y-2">
+        <nav className="flex-1 mt-6 px-4 pb-4 space-y-2 mt-22">
           {navigation.map((item, index) => (
             <NavLink
               key={item.name}

@@ -99,9 +99,9 @@ const InstallationDetail = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 ml-8">
       {/* Cabeçalho */}
-      <div className="flex items-center justify-between">
+      <div className="flex items-center justify-between mt-8">
         <div className="flex mt-16 items-center">
           <Link
             to="/instalacao"

@@ -100,9 +100,9 @@ const Dashboard = () => {
   }
 
   return (
-    <div className="space-y-8 fade-in">
+    <div className="space-y-8 fade-in ml-8">
       {/* Cabeçalho Melhorado */}
-      <div className="glass-effect rounded-2xl p-6 border border-white/20">
+      <div className="glass-effect rounded-2xl p-6 border border-white/20 mt-16">
         <div className="flex items-center justify-between">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">
