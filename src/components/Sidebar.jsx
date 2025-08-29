@@ -39,24 +39,14 @@ const Sidebar = ({ isOpen, onClose }) => {
 
       {/* Sidebar */}
       <div className={`
-        fixed top-17 left-0 z-40 w-72 h-full bg-white border-r border-gray-200 
-        transform transition-transform duration-300 ease-out lg:translate-x-0 shadow-lg
+        fixed top-16 left-0 z-40 w-72 h-[calc(100vh-4rem)] bg-white border-r border-gray-200 
+        transform transition-transform duration-300 ease-out lg:translate-x-0 shadow-lg overflow-y-auto
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
         
-        {/* Header do sidebar mobile */}
-        <div className="flex items-center justify-between p-6 lg:hidden border-b border-gray-100">
-          <h2 className="text-lg font-bold text-gray-900">Menu Navegação</h2>
-          <button
-            onClick={onClose}
-            className="p-2 rounded-xl text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-all duration-200"
-          >
-            <X className="h-5 w-5" />
-          </button>
-        </div>
 
         {/* Navegação */}
-        <nav className="flex-1 mt-6 px-4 pb-4 space-y-2 mt-22">
+        <nav className="flex-1 px-4 pb-4 space-y-2 mt-8">
           {navigation.map((item, index) => (
             <NavLink
               key={item.name}
@@ -91,7 +81,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                   
                   {/* Indicador de ativo */}
                   {isActive && (
-                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-otis-500 to-otis-700 rounded-r-full"></div>
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-otis-500 to-otis-700 rounded-r-full "></div>
                   )}
                 </>
               )}
@@ -100,7 +90,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         </nav>
 
         {/* Seção de estatísticas rápidas */}
-        <div className="p-4 m-4 bg-gradient-to-br from-otis-50 to-otis-100 rounded-xl border border-otis-200">
+        <div className="p-4 m-4 bg-gradient-to-br from-otis-50 to-otis-100 rounded-xl border border-otis-200 mt-12">
           <div className="flex items-center justify-between mb-3">
             <h3 className="text-sm font-semibold text-otis-800">Sistema Status</h3>
             <Zap className="h-4 w-4 text-otis-600" />
@@ -123,7 +113,7 @@ const Sidebar = ({ isOpen, onClose }) => {
         </div>
 
         {/* Footer do sidebar */}
-        <div className="p-4 border-t border-gray-200 bg-gray-50">
+        <div className="p-4 border-t border-gray-200 bg-gray-50 mt-16">
           <div className="flex items-center text-xs text-gray-600 mb-2">
             <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse-subtle"></div>
             Sistema Online - Conectado
