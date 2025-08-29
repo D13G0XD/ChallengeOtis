@@ -8,7 +8,9 @@ import {
   Wrench, 
   Shield, 
   Users,
-  X 
+  X,
+  ChevronRight,
+  Zap
 } from 'lucide-react';
 import { useTranslation } from '../config/i18n';
 
@@ -16,13 +18,13 @@ const Sidebar = ({ isOpen, onClose }) => {
   const { t } = useTranslation();
 
   const navigation = [
-    { name: t('dashboard'), href: '/', icon: BarChart3 },
-    { name: t('vendas'), href: '/vendas', icon: ShoppingCart },
-    { name: t('planejamento'), href: '/planejamento', icon: Calendar },
-    { name: t('fabricacao'), href: '/fabricacao', icon: Factory },
-    { name: t('instalacao'), href: '/instalacao', icon: Wrench },
-    { name: t('qualidade'), href: '/qualidade', icon: Shield },
-    { name: t('portalCliente'), href: '/cliente', icon: Users },
+    { name: t('dashboard'), href: '/', icon: BarChart3, color: 'text-blue-600' },
+    { name: t('vendas'), href: '/vendas', icon: ShoppingCart, color: 'text-green-600' },
+    { name: t('planejamento'), href: '/planejamento', icon: Calendar, color: 'text-purple-600' },
+    { name: t('fabricacao'), href: '/fabricacao', icon: Factory, color: 'text-orange-600' },
+    { name: t('instalacao'), href: '/instalacao', icon: Wrench, color: 'text-blue-600' },
+    { name: t('qualidade'), href: '/qualidade', icon: Shield, color: 'text-emerald-600' },
+    { name: t('portalCliente'), href: '/cliente', icon: Users, color: 'text-indigo-600' },
   ];
 
   return (
@@ -30,60 +32,105 @@ const Sidebar = ({ isOpen, onClose }) => {
       {/* Overlay para mobile */}
       {isOpen && (
         <div 
-          className="fixed inset-0 bg-gray-600 bg-opacity-75 z-40 lg:hidden"
+          className="fixed inset-0 bg-gray-900/50 backdrop-blur-sm z-40 lg:hidden transition-all duration-300"
           onClick={onClose}
         />
       )}
 
       {/* Sidebar */}
       <div className={`
-        fixed top-12 left-0 z-40 w-64 h-full bg-white border-r border-gray-200 
-        transform transition-transform duration-300 ease-in-out lg:translate-x-0
+        fixed top-17 left-0 z-40 w-72 h-full bg-white border-r border-gray-200 
+        transform transition-transform duration-300 ease-out lg:translate-x-0 shadow-lg
         ${isOpen ? 'translate-x-0' : '-translate-x-full'}
       `}>
+        
         {/* Header do sidebar mobile */}
-        <div className="flex items-center justify-between p-4 lg:hidden">
-          <h2 className="text-lg font-semibold text-gray-900">Menu</h2>
+        <div className="flex items-center justify-between p-6 lg:hidden border-b border-gray-100">
+          <h2 className="text-lg font-bold text-gray-900">Menu Navegação</h2>
           <button
             onClick={onClose}
-            className="p-1 rounded-md text-gray-400 hover:text-gray-500"
+            className="p-2 rounded-xl text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-all duration-200"
           >
-            <X className="h-6 w-6" />
+            <X className="h-5 w-5" />
           </button>
         </div>
 
         {/* Navegação */}
-        <nav className="flex-1 mt-8 px-4 pb-4 space-y-1">
-          {navigation.map((item) => (
+        <nav className="flex-1 mt-6 px-4 pb-4 space-y-2">
+          {navigation.map((item, index) => (
             <NavLink
               key={item.name}
               to={item.href}
               onClick={() => onClose()}
               className={({ isActive }) =>
-                `group flex items-center px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
+                `group flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl 
+                 transition-all duration-200 hover:translate-x-1 relative overflow-hidden ${
                   isActive
-                    ? 'bg-otis-light text-otis-blue border-r-2 border-otis-blue'
+                    ? 'bg-gradient-to-r from-otis-50 to-otis-100 text-otis-700 border-l-4 border-otis-600 shadow-otis'
                     : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
                 }`
               }
             >
-              <item.icon
-                className="mr-3 h-5 w-5 flex-shrink-0"
-                aria-hidden="true"
-              />
-              {item.name}
+              {({ isActive }) => (
+                <>
+                  <div className="flex items-center">
+                    <item.icon
+                      className={`mr-4 h-5 w-5 flex-shrink-0 transition-all duration-200 ${
+                        isActive ? item.color : 'text-gray-400 group-hover:text-gray-600'
+                      }`}
+                      aria-hidden="true"
+                    />
+                    <span className="font-medium">
+                      {item.name}
+                    </span>
+                  </div>
+                  
+                  {isActive && (
+                    <ChevronRight className="h-4 w-4 text-otis-600 animate-pulse" />
+                  )}
+                  
+                  {/* Indicador de ativo */}
+                  {isActive && (
+                    <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-otis-500 to-otis-700 rounded-r-full"></div>
+                  )}
+                </>
+              )}
             </NavLink>
           ))}
         </nav>
 
-        {/* Footer do sidebar */}
-        <div className="p-4 border-t border-gray-200">
-          <div className="flex items-center text-xs text-gray-500">
-            <div className="w-2 h-2 bg-green-400 rounded-full mr-2"></div>
-            Sistema Online
+        {/* Seção de estatísticas rápidas */}
+        <div className="p-4 m-4 bg-gradient-to-br from-otis-50 to-otis-100 rounded-xl border border-otis-200">
+          <div className="flex items-center justify-between mb-3">
+            <h3 className="text-sm font-semibold text-otis-800">Sistema Status</h3>
+            <Zap className="h-4 w-4 text-otis-600" />
           </div>
-          <div className="mt-1 text-xs text-gray-400">
-            v1.0.0 - MVP
+          
+          <div className="space-y-2">
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-otis-700">Instalações Ativas</span>
+              <span className="font-bold text-otis-800">12</span>
+            </div>
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-otis-700">Alertas Pendentes</span>
+              <span className="font-bold text-orange-600">3</span>
+            </div>
+            <div className="flex items-center justify-between text-xs">
+              <span className="text-otis-700">Taxa de Sucesso</span>
+              <span className="font-bold text-green-600">94%</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Footer do sidebar */}
+        <div className="p-4 border-t border-gray-200 bg-gray-50">
+          <div className="flex items-center text-xs text-gray-600 mb-2">
+            <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse-subtle"></div>
+            Sistema Online - Conectado
+          </div>
+          <div className="flex items-center justify-between text-xs text-gray-500">
+            <span>v1.0.0 - MVP</span>
+            <span className="text-otis-600 font-medium">OTIS LATAM</span>
           </div>
         </div>
       </div>

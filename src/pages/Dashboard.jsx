@@ -15,6 +15,16 @@ import {
   Legend,
   ResponsiveContainer 
 } from 'recharts';
+import { 
+  TrendingUp, 
+  Building, 
+  Clock, 
+  Star, 
+  AlertTriangle,
+  Users,
+  Activity,
+  Target
+} from 'lucide-react';
 import KpiCard from '../components/KpiCard';
 import StatusBadge from '../components/StatusBadge';
 import { mockApi } from '../services/mockApi';
@@ -79,31 +89,55 @@ const Dashboard = () => {
 
   if (loading) {
     return (
-      <div className="flex items-center justify-center h-64">
-        <div className="text-lg text-gray-600">{t('loading')}</div>
+      <div className="flex items-center justify-center h-64 fade-in">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-otis-600 mx-auto mb-4"></div>
+          <div className="text-lg text-gray-600 font-medium">{t('loading')}</div>
+          <div className="text-sm text-gray-500">Carregando dashboard...</div>
+        </div>
       </div>
     );
   }
 
   return (
-    <div className="space-y-6">
-      {/* Cabeçalho */}
-      <div>
-        <h1 className="text-2xl font-bold text-gray-900">
-          {t('dashboard')}
-        </h1>
-        <p className="text-gray-600 mt-8">
-          Visão geral das operações OTIS LATAM
-        </p>
+    <div className="space-y-8 fade-in">
+      {/* Cabeçalho Melhorado */}
+      <div className="glass-effect rounded-2xl p-6 border border-white/20">
+        <div className="flex items-center justify-between">
+          <div>
+            <h1 className="text-3xl font-bold text-gray-900 mb-2">
+              {t('dashboard')}
+            </h1>
+            <p className="text-gray-600 text-lg">
+              Visão geral das operações OTIS LATAM
+            </p>
+            <div className="flex items-center mt-3 text-sm text-gray-500">
+              <Activity className="h-4 w-4 mr-2 text-green-600" />
+              <span>Atualizado há 2 minutos</span>
+            </div>
+          </div>
+          
+          <div className="hidden lg:flex items-center space-x-4">
+            <div className="text-right">
+              <div className="text-2xl font-bold text-otis-700">Brasil</div>
+              <div className="text-sm text-gray-500">Região Principal</div>
+            </div>
+            <div className="w-16 h-16 bg-gradient-to-br from-otis-500 to-otis-700 rounded-2xl flex items-center justify-center shadow-otis">
+              <Building className="h-8 w-8 text-white" />
+            </div>
+          </div>
+        </div>
       </div>
 
-      {/* KPIs */}
+      {/* KPIs Melhorados */}
       {kpis && (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <KpiCard
             title={t('totalInstalacoes')}
             value={kpis.totalInstallations}
-            color="blue"
+            color="otis"
+            icon={Building}
+            description="Instalações ativas no sistema"
           />
           <KpiCard
             title={t('pontuacaoOnTime')}
@@ -112,6 +146,8 @@ const Dashboard = () => {
             variation={5}
             trend="up"
             color="green"
+            icon={Target}
+            description="Taxa de entregas pontuais"
           />
           <KpiCard
             title={t('variacaoCusto')}
@@ -120,12 +156,16 @@ const Dashboard = () => {
             variation={kpis.avgCostVariance}
             trend={kpis.avgCostVariance <= 0 ? 'up' : 'down'}
             color={kpis.avgCostVariance <= 0 ? 'green' : 'red'}
+            icon={TrendingUp}
+            description="Variação do custo médio"
           />
           <KpiCard
             title={t('notaMedia')}
             value={kpis.avgFeedbackScore}
             unit="/5"
             color="purple"
+            icon={Star}
+            description="Satisfação dos clientes"
           />
         </div>
       )}

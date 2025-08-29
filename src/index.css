@@ -4,77 +4,224 @@
 
 @layer base {
   html {
-    font-family: 'Inter', system-ui, sans-serif;
+    font-family: 'Inter', 'Roboto', system-ui, sans-serif;
+    scroll-behavior: smooth;
   }
   
   body {
-    @apply bg-gray-50 text-gray-900;
+    @apply bg-gradient-to-br from-gray-50 to-gray-100 text-gray-900;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+
+  h1 { @apply text-3xl lg:text-4xl; }
+  h2 { @apply text-2xl lg:text-3xl; }
+  h3 { @apply text-xl lg:text-2xl; }
+  h4 { @apply text-lg lg:text-xl; }
 }
 
 @layer components {
+  /* Botões OTIS */
   .btn-primary {
-    @apply bg-otis-blue hover:bg-otis-dark text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply bg-otis-700 hover:bg-otis-800 focus:ring-otis-500 text-white font-medium py-3 px-6 rounded-xl 
+           transition-all duration-200 transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2
+           shadow-otis hover:shadow-otis-lg;
   }
   
   .btn-secondary {
-    @apply bg-gray-200 hover:bg-gray-300 text-gray-700 font-medium py-2 px-4 rounded-lg transition-colors duration-200;
+    @apply bg-white hover:bg-gray-50 text-otis-700 border-2 border-otis-200 hover:border-otis-300 
+           font-medium py-3 px-6 rounded-xl transition-all duration-200 transform hover:scale-105
+           focus:outline-none focus:ring-2 focus:ring-otis-500 focus:ring-offset-2;
   }
-  
+
+  .btn-outline {
+    @apply bg-transparent hover:bg-otis-50 text-otis-700 border-2 border-otis-300 hover:border-otis-500
+           font-medium py-2 px-4 rounded-lg transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-otis-500 focus:ring-offset-2;
+  }
+
+  .btn-ghost {
+    @apply bg-transparent hover:bg-gray-100 text-gray-600 hover:text-gray-900
+           font-medium py-2 px-4 rounded-lg transition-all duration-200
+           focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2;
+  }
+
+  .btn-sm {
+    @apply py-2 px-4 text-sm rounded-lg;
+  }
+
+  .btn-lg {
+    @apply py-4 px-8 text-lg rounded-xl;
+  }
+
+  /* Cards OTIS */
   .card {
-    @apply bg-white rounded-lg shadow-sm border border-gray-200 p-6;
+    @apply bg-white rounded-2xl shadow-card hover:shadow-card-hover border border-gray-200 p-6 
+           transition-all duration-300 hover:translate-y-1;
   }
-  
+
+  .card-compact {
+    @apply card p-4;
+  }
+
+  .card-elevated {
+    @apply card shadow-otis-lg;
+  }
+
+  .card-gradient {
+    @apply card bg-gradient-to-br from-white to-gray-50;
+  }
+
+  /* Badges de Status Melhorados */
   .badge {
-    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium 
+           transition-all duration-200 transform hover:scale-105;
   }
-  
+
   .status-vendido {
-    @apply badge bg-gray-100 text-gray-800;
+    @apply badge bg-gray-100 text-gray-800 border border-gray-200;
   }
   
   .status-engenharia {
-    @apply badge bg-indigo-100 text-indigo-800;
+    @apply badge bg-indigo-100 text-indigo-800 border border-indigo-200;
   }
   
   .status-fabricacao {
-    @apply badge bg-teal-100 text-teal-800;
+    @apply badge bg-teal-100 text-teal-800 border border-teal-200;
   }
   
   .status-transporte {
-    @apply badge bg-amber-100 text-amber-800;
+    @apply badge bg-amber-100 text-amber-800 border border-amber-200;
   }
   
   .status-instalacao {
-    @apply badge bg-blue-100 text-blue-800;
+    @apply badge bg-blue-100 text-blue-800 border border-blue-200;
   }
   
   .status-comissionamento {
-    @apply badge bg-purple-100 text-purple-800;
+    @apply badge bg-purple-100 text-purple-800 border border-purple-200;
   }
   
   .status-handover {
-    @apply badge bg-green-100 text-green-800;
+    @apply badge bg-green-100 text-green-800 border border-green-200;
   }
   
   .status-pos-venda {
-    @apply badge bg-slate-100 text-slate-800;
+    @apply badge bg-slate-100 text-slate-800 border border-slate-200;
+  }
+
+  /* Inputs e Forms */
+  .form-input {
+    @apply block w-full px-4 py-3 border border-gray-300 rounded-xl
+           focus:ring-2 focus:ring-otis-500 focus:border-otis-500
+           transition-all duration-200 bg-white text-gray-900
+           placeholder-gray-500;
+  }
+
+  .form-select {
+    @apply form-input appearance-none bg-white bg-no-repeat bg-right pr-10;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+    background-position: right 0.75rem center;
+    background-size: 1.25rem 1.25rem;
+  }
+
+  .form-textarea {
+    @apply form-input resize-vertical min-h-24;
+  }
+
+  .form-label {
+    @apply block text-sm font-medium text-gray-700 mb-2;
+  }
+
+  .form-error {
+    @apply text-sm text-red-600 mt-1;
+  }
+
+  /* Tabelas */
+  .table {
+    @apply w-full divide-y divide-gray-200;
+  }
+
+  .table-header {
+    @apply bg-gray-50;
+  }
+
+  .table-header-cell {
+    @apply px-6 py-4 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+
+  .table-row {
+    @apply bg-white hover:bg-gray-50 transition-colors duration-150;
+  }
+
+  .table-cell {
+    @apply px-6 py-4 whitespace-nowrap text-sm text-gray-900;
+  }
+
+  /* Animações e efeitos */
+  .loading-pulse {
+    @apply animate-pulse-subtle;
+  }
+
+  .fade-in {
+    @apply animate-fade-in;
+  }
+
+  .slide-up {
+    @apply animate-slide-up;
+  }
+
+  /* Gradientes OTIS */
+  .gradient-otis {
+    @apply bg-gradient-to-r from-otis-600 to-otis-800;
+  }
+
+  .gradient-otis-light {
+    @apply bg-gradient-to-r from-otis-100 to-otis-200;
+  }
+
+  /* Estados interativos */
+  .interactive {
+    @apply transition-all duration-200 cursor-pointer hover:shadow-lg transform hover:scale-105;
+  }
+
+  .glass-effect {
+    @apply bg-white/80 backdrop-blur-sm border border-white/20;
   }
 }
 
-/* Scrollbar personalizado */
+/* Scrollbar personalizado melhorado */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 8px;
+  height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-gray-100;
+  @apply bg-gray-100 rounded-full;
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply bg-gray-300 rounded-full;
+  @apply bg-gray-300 rounded-full hover:bg-gray-400 transition-colors;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  @apply bg-gray-400;
+::-webkit-scrollbar-corner {
+  @apply bg-gray-100;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db #f3f4f6;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+  }
 }
