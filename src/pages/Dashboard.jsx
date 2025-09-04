@@ -214,7 +214,7 @@ const Dashboard = () => {
       </div>
 
       {/* Status Distribution e Instalações Recentes */}
-      <div className="grid grid-cols-2 lg:grid-cols-1 mb">
+      <div className="grid grid-cols-1 lg:grid-cols-1 mb">
         {/* Distribuição por Status */}
         <div className="card">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">
@@ -241,7 +241,7 @@ const Dashboard = () => {
         </div>
 
         {/* Instalações Recentes */}
-        <div className="lg:col-span-3 card">
+        <div className="lg:col-span-3 card mt-8">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-semibold text-gray-900">
               Instalações em Andamento
