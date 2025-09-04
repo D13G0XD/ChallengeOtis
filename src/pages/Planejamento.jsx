@@ -100,10 +100,10 @@ const Planejamento = () => {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 ml-8">
       {/* Cabeçalho */}
       <div>
-        <h1 className="text-2xl font-bold text-gray-900">
+        <h1 className="text-2xl font-bold text-gray-900 mt-16">
           {t('planejamento')}
         </h1>
         <p className="text-gray-600 mt-8">
