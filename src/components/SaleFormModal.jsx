@@ -167,7 +167,7 @@ const SaleFormModal = ({ isOpen, onClose, onSave, sale = null, loading = false }
                 name="cliente"
                 value={formData.cliente}
                 onChange={handleChange}
-                className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                className={`w-full px-3 py-2 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                   errors.cliente ? 'border-red-300' : 'border-gray-300'
                 }`}
                 placeholder="Nome do cliente"
@@ -187,7 +187,7 @@ const SaleFormModal = ({ isOpen, onClose, onSave, sale = null, loading = false }
                 name="vendedor"
                 value={formData.vendedor}
                 onChange={handleChange}
-                className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                className={`w-full px-3 py-2 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                   errors.vendedor ? 'border-red-300' : 'border-gray-300'
                 }`}
                 placeholder="Nome do vendedor"
@@ -206,7 +206,7 @@ const SaleFormModal = ({ isOpen, onClose, onSave, sale = null, loading = false }
                 name="tipo"
                 value={formData.tipo}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {tiposElevador.map(tipo => (
                   <option key={tipo} value={tipo}>{tipo}</option>
@@ -224,7 +224,7 @@ const SaleFormModal = ({ isOpen, onClose, onSave, sale = null, loading = false }
                 name="dataVenda"
                 value={formData.dataVenda}
                 onChange={handleChange}
-                className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                className={`w-full px-3 py-2 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                   errors.dataVenda ? 'border-red-300' : 'border-gray-300'
                 }`}
               />
@@ -243,7 +243,7 @@ const SaleFormModal = ({ isOpen, onClose, onSave, sale = null, loading = false }
                 name="prazoPrometido"
                 value={formData.prazoPrometido}
                 onChange={handleChange}
-                className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                className={`w-full px-3 py-2 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                   errors.prazoPrometido ? 'border-red-300' : 'border-gray-300'
                 }`}
               />
@@ -264,7 +264,7 @@ const SaleFormModal = ({ isOpen, onClose, onSave, sale = null, loading = false }
                 onChange={handleChange}
                 min="0"
                 step="0.01"
-                className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                className={`w-full px-3 py-2 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                   errors.valor ? 'border-red-300' : 'border-gray-300'
                 }`}
                 placeholder="0.00"
@@ -283,7 +283,7 @@ const SaleFormModal = ({ isOpen, onClose, onSave, sale = null, loading = false }
                 name="status"
                 value={formData.status}
                 onChange={handleChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               >
                 {statusOptions.map(status => (
                   <option key={status} value={status}>{status}</option>
@@ -302,7 +302,7 @@ const SaleFormModal = ({ isOpen, onClose, onSave, sale = null, loading = false }
                 value={formData.andares}
                 onChange={handleChange}
                 min="1"
-                className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                className={`w-full px-3 py-2 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                   errors.andares ? 'border-red-300' : 'border-gray-300'
                 }`}
                 placeholder="0"
@@ -323,7 +323,7 @@ const SaleFormModal = ({ isOpen, onClose, onSave, sale = null, loading = false }
                 value={formData.paradas}
                 onChange={handleChange}
                 min="1"
-                className={`w-full px-3 py-2 border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
+                className={`w-full px-3 py-2 bg-white border rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 ${
                   errors.paradas ? 'border-red-300' : 'border-gray-300'
                 }`}
                 placeholder="0"
