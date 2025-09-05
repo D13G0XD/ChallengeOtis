@@ -215,7 +215,7 @@ const InstallationDetail = () => {
                 <select
                   value={newActivity.tipo}
                   onChange={(e) => setNewActivity(prev => ({ ...prev, tipo: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-otis-blue focus:border-transparent"
+                  className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:ring-2 focus:ring-otis-blue focus:border-transparent"
                 >
                   <option value="">Selecione...</option>
                   <option value="Instalação de Guias">Instalação de Guias</option>
@@ -233,7 +233,7 @@ const InstallationDetail = () => {
                   type="text"
                   value={newActivity.responsavel}
                   onChange={(e) => setNewActivity(prev => ({ ...prev, responsavel: e.target.value }))}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-otis-blue focus:border-transparent"
+                  className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:ring-2 focus:ring-otis-blue focus:border-transparent"
                   placeholder="Nome do responsável"
                 />
               </div>
@@ -246,7 +246,7 @@ const InstallationDetail = () => {
                 value={newActivity.observacoes}
                 onChange={(e) => setNewActivity(prev => ({ ...prev, observacoes: e.target.value }))}
                 rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-otis-blue focus:border-transparent"
+                className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:ring-2 focus:ring-otis-blue focus:border-transparent"
                 placeholder="Descreva os detalhes da atividade..."
               />
             </div>

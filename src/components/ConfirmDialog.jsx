@@ -41,41 +41,56 @@ const ConfirmDialog = ({
   const styles = getTypeStyles();
 
   return (
-    <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg shadow-xl w-full max-w-md mx-4">
-        <div className="flex items-center justify-between p-6 border-b">
-          <div className="flex items-center space-x-3">
-            <AlertTriangle className={`h-6 w-6 ${styles.icon}`} />
-            <h2 className="text-xl font-semibold text-gray-900">
-              {title}
-            </h2>
-          </div>
-          <button
-            onClick={onClose}
-            className="text-gray-400 hover:text-gray-600 transition-colors"
-          >
-            <X className="h-6 w-6" />
-          </button>
-        </div>
+    <div className="fixed inset-0 z-50">
+      {/* Overlay */}
+      <div 
+        className="fixed inset-0 bg-black/60 backdrop-blur-sm transition-opacity"
+        onClick={onClose}
+      />
+      
+      {/* Modal Container */}
+      <div className="fixed inset-0 overflow-y-auto">
+        <div className="flex min-h-full items-center justify-center p-4">
+          {/* Modal Content */}
+          <div className="relative bg-white rounded-xl shadow-2xl w-full max-w-md transform transition-all">
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-gray-200">
+              <div className="flex items-center space-x-3">
+                <AlertTriangle className={`h-6 w-6 ${styles.icon}`} />
+                <h2 className="text-xl font-semibold text-gray-900">
+                  {title}
+                </h2>
+              </div>
+              <button
+                onClick={onClose}
+                className="text-gray-400 hover:text-gray-600 transition-colors rounded-lg p-1 hover:bg-gray-100"
+              >
+                <X className="h-5 w-5" />
+              </button>
+            </div>
 
-        <div className="p-6">
-          <p className="text-gray-700 mb-6">
-            {message}
-          </p>
+            {/* Body */}
+            <div className="p-6">
+              <p className="text-gray-700">
+                {message}
+              </p>
 
-          <div className="flex justify-end space-x-4">
-            <button
-              onClick={onClose}
-              className="px-4 py-2 text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-md transition-colors"
-            >
-              {cancelText}
-            </button>
-            <button
-              onClick={onConfirm}
-              className={`px-4 py-2 rounded-md transition-colors ${styles.button}`}
-            >
-              {confirmText}
-            </button>
+              {/* Footer */}
+              <div className="mt-6 flex justify-end gap-3">
+                <button
+                  onClick={onClose}
+                  className="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+                >
+                  {cancelText}
+                </button>
+                <button
+                  onClick={onConfirm}
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition-colors ${styles.button}`}
+                >
+                  {confirmText}
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

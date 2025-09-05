@@ -359,7 +359,7 @@ const ClientFeedback = () => {
             <select
               value={feedback.categoria}
               onChange={(e) => setFeedback(prev => ({ ...prev, categoria: e.target.value }))}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-otis-blue focus:border-transparent"
+              className="w-full px-3 py-2 border bg-white border-gray-300 rounded-md focus:ring-2 focus:ring-otis-blue focus:border-transparent"
             >
               <option value="Atendimento">Atendimento</option>
               <option value="Qualidade">Qualidade</option>
@@ -377,7 +377,7 @@ const ClientFeedback = () => {
               value={feedback.comentario}
               onChange={(e) => setFeedback(prev => ({ ...prev, comentario: e.target.value }))}
               rows={4}
-              className="w-full px-3 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-otis-blue focus:border-transparent"
+              className="w-full px-3 py-2 bg-white border border-gray-300 rounded-md focus:ring-2 focus:ring-otis-blue focus:border-transparent"
               placeholder="Conte-nos sobre sua experiência..."
             />
           </div>
